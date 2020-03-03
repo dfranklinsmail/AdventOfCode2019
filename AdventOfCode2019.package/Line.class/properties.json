@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "AdventOfCode2019",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"start",
+		"end"
+	],
+	"name" : "Line",
+	"type" : "normal"
+}

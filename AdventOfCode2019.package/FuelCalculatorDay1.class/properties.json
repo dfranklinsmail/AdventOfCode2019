@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "AdventOfCode2019",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"statements"
+	],
+	"name" : "FuelCalculatorDay1",
+	"type" : "normal"
+}
