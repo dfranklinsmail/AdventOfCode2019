@@ -1,11 +1,16 @@
 accessing
 findMinStepsToIntersection: wireA to: wireB
-	| minSteps tempSteps linesSteps |
-	minSteps := SmallInteger maxVal.
-	linesSteps := 0.
-	(wireA lines)
-		do: [ :line | 
-			tempSteps := linesSteps + (wireB containsLength: line).
-			minSteps := minSteps min: tempSteps.
-			linesSteps := linesSteps + line length ].
-	^ minSteps
+	| steps wireBSteps |
+	steps := SmallInteger maxVal.
+	
+	1 to: (wireA size) do: [ :i |
+		 "Transcript show: i;cr."
+		 (i > steps) ifTrue: [ ^steps. ].
+       wireBSteps := wireB contains: (wireA at: i).
+       (wireBSteps > 0) ifTrue: [ 
+	       steps := steps min: (i + wireBSteps).
+	       Transcript show: steps;cr.
+	    ].
+   ].
+
+   ^steps.

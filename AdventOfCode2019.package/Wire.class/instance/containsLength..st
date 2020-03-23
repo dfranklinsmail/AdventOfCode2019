@@ -1,15 +1,33 @@
 comparing
 containsLength: line
 	"decides if the given line intersects with and of the lines contained by the current wire"
-	|intersections minDistance length |
+	|intersection intersections minDistance minD parentLengths |
 	minDistance := SmallInteger maxVal.
-	length := 0.
+	parentLengths := 0.
    lines do: [ :currentLine |
-	   intersections := currentLine getIntersection: line getStart end: line getEnd.
+		intersections := currentLine getIntersection: (line getStart) end: (line getEnd).
+		intersection := 0@0.
 	   (intersections isEmpty) ifFalse: [ 
-	       minDistance := minDistance min: (length + ((currentLine length: (intersections at: 1)) 
-				min: (currentLine length: (intersections last)))).
+         intersection := intersections at: 1.
+         Transcript show: 'the intersection are '.
+		   Transcript show: intersection;cr.		
+      ].
+		((intersection x = 0) & (intersection y =0))  ifFalse: [
+			Transcript show: 'the line start are '.
+		   Transcript show: line getStart;cr.		
+			Transcript show: 'the line end are '.
+		   Transcript show: line getEnd;cr.		
+				
+			 minD := (line length: (intersections at: 1)) 
+							+ (currentLine length: (intersections at: 1)).
+			"min: (line length: (intersections last))."
+			Transcript show: 'the minD are '.
+		   Transcript show: minD;cr.		
+	       minDistance := minDistance min: (parentLengths + minD ).
 		].
-	   length := length + currentLine length.
+		Transcript show: 'the parentLengths are '.
+		Transcript show: parentLengths;cr.		
+	   parentLengths := parentLengths + currentLine length.
 	].
+
   ^minDistance.
