@@ -16,7 +16,7 @@ testCalculateStepsPart2
   
   result := adventDay3 findMinStepsToIntersection: firstWire  to: secondWire.
 
-  self assert: result equals: 489.
+  self assert: result equals: 93654.
   
   
   
