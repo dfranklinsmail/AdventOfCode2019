@@ -1,0 +1,21 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "AdventOfCode2019",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"mode1",
+		"mode2",
+		"mode3",
+		"optCode",
+		"arg3",
+		"arg2",
+		"arg1",
+		"location",
+		"incrementCounter"
+	],
+	"name" : "Instruction",
+	"type" : "normal"
+}
